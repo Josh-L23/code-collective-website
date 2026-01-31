@@ -67,3 +67,81 @@ document.addEventListener("click", (event) => {
         closeOtherCards();
     }
 });
+
+// Contact Form Email Integration
+const contactForm = document.getElementById("contact-form");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+        const businessType = document.getElementById("businessType").value;
+        const service = document.getElementById("service").value;
+
+        // Validate required fields
+        if (!name || !email || !message) {
+            alert("Please fill in all required fields (Name, Email, and Message).");
+            return;
+        }
+
+        // Create the message payload with additional context
+        const fullMessage = `
+Business Type: ${businessType || "Not specified"}
+Service Interest: ${service || "Not specified"}
+
+Message:
+${message}
+        `.trim();
+
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+
+        try {
+            submitButton.disabled = true;
+            submitButton.textContent = "Sending...";
+
+            const response = await fetch(
+                "https://codecollective-email-server.vercel.app/send-email",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        name: name,
+                        email: email,
+                        message: fullMessage,
+                    }),
+                }
+            );
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || "Failed to send email");
+            }
+
+            const result = await response.json();
+
+            // Success message
+            alert("Message sent successfully! We'll get back to you soon.");
+            contactForm.reset();
+            submitButton.textContent = "Message Sent ✓";
+
+            // Reset button after 3 seconds
+            setTimeout(() => {
+                submitButton.textContent = originalButtonText;
+                submitButton.disabled = false;
+            }, 3000);
+        } catch (error) {
+            console.error("Error sending email:", error);
+            alert(
+                `Error sending message: ${error.message}. Please try again or contact us on WhatsApp.`
+            );
+            submitButton.textContent = originalButtonText;
+            submitButton.disabled = false;
+        }
+    });
+}
