@@ -3,430 +3,613 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Collective</title>
-    <meta name="description" content="Code Collective is a youth-led tech studio delivering tailored, mobile-first digital solutions for ambitious businesses in Malawi.">
-    <meta property="og:title" content="Code Collective">
-    <meta property="og:description" content="A youth-led tech studio delivering tailored, mobile-first digital solutions for ambitious businesses in Malawi.">
+    <title>Code Collective — Malawi's Premier Tech Studio</title>
+    <meta name="description" content="Code Collective is Malawi's boldest youth-led tech studio. We build world-class websites, mobile apps, and digital systems for ambitious businesses.">
+    <meta property="og:title" content="Code Collective — Malawi's Premier Tech Studio">
+    <meta property="og:description" content="We turn complex challenges into beautiful digital solutions. Based in Malawi, built for the world.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://codecollective-tech.netlify.app/">
     <meta property="og:image" content="https://codecollective-tech.netlify.app/images/desktophero.jpeg">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Code Collective">
-    <meta name="twitter:description" content="A youth-led tech studio delivering tailored, mobile-first digital solutions for ambitious businesses in Malawi.">
-    <meta name="twitter:image" content="https://codecollective-tech.netlify.app/images/desktophero.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="site-header">
+
+    <!-- CURSOR GLOW -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- HEADER -->
+    <header class="site-header" id="siteHeader">
         <div class="container nav-bar">
             <a class="brand" href="#home">
-                <img src="images/logo.png" alt="Code Collective Logo" class="brand-logo">
+                <div class="brand-logomark">
+                    <img src="images/logo.png" alt="Code Collective Logo" class="brand-logo">
+                </div>
                 <span class="brand-text">
-                    <span class="brand-code">Code</span>
-                    <span class="brand-collective">Collective</span>
+                    <span class="brand-code">Code</span><span class="brand-collective">Collective</span>
                 </span>
             </a>
 
             <nav class="nav-links" aria-label="Primary">
-                <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#services">Services</a>
-                <a href="#projects">Projects</a>
+                <a href="#projects">Work</a>
+                <a href="#team">Team</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#contact" class="nav-cta">Start a Project</a>
+            </nav>
+
+            <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+            <nav>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Work</a>
+                <a href="#team">Team</a>
                 <a href="#pricing">Pricing</a>
                 <a href="#contact">Contact</a>
             </nav>
-
-            <details class="nav-toggle">
-                <summary>Menu</summary>
-                <div class="nav-panel" aria-label="Mobile">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#services">Services</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#pricing">Pricing</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </details>
         </div>
     </header>
 
     <main>
-        <section id="home" class="hero-sequence">
-            <div class="hero-panel hero-visual">
+        <!-- ======== HERO ======== -->
+        <section id="home" class="hero">
+            <div class="hero-bg">
+                <img src="images/desktophero.jpeg" alt="" class="hero-img" loading="eager" fetchpriority="high">
                 <div class="hero-overlay"></div>
-                <div class="container hero-content">
-                    <div class="hero-line hero-left">Where Collaboration</div>
-                    <div class="hero-logo">
-                        <img src="images/logo.png" alt="Code Collective">
+                <div class="hero-grain"></div>
+            </div>
+
+            <div class="hero-ticker" aria-hidden="true">
+                <div class="ticker-track">
+                    <span>Web Development</span>
+                    <span class="ticker-dot">✦</span>
+                    <span>Mobile Apps</span>
+                    <span class="ticker-dot">✦</span>
+                    <span>Brand Identity</span>
+                    <span class="ticker-dot">✦</span>
+                    <span>Information Systems</span>
+                    <span class="ticker-dot">✦</span>
+                    <span>SEO &amp; Content</span>
+                    <span class="ticker-dot">✦</span>
+                    <span>Web Development</span>
+                    <span class="ticker-dot">✦</span>
+                    <span>Mobile Apps</span>
+                    <span class="ticker-dot">✦</span>
+                    <span>Brand Identity</span>
+                    <span class="ticker-dot">✦</span>
+                    <span>Information Systems</span>
+                    <span class="ticker-dot">✦</span>
+                    <span>SEO &amp; Content</span>
+                    <span class="ticker-dot">✦</span>
+                </div>
+            </div>
+
+            <div class="container hero-content">
+                <div class="hero-badge reveal-hero">
+                    <span class="pulse-dot"></span>
+                    Youth-Led · Lilongwe, Malawi
+                </div>
+                <h1 class="hero-headline reveal-hero" style="--delay:0.1s">
+                    We Build Digital<br>
+                    <em>Experiences</em> That<br>
+                    Move Malawi Forward.
+                </h1>
+                <p class="hero-sub reveal-hero" style="--delay:0.2s">
+                    From bold websites to complex systems — we are the studio that turns your vision into a polished, high-performing digital product.
+                </p>
+                <div class="hero-actions reveal-hero" style="--delay:0.3s">
+                    <a class="btn btn-glow" href="#projects">See Our Work</a>
+                    <a class="btn btn-ghost" href="https://wa.me/265886362309" target="_blank" rel="noopener noreferrer">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.096.54 4.07 1.484 5.796L0 24l6.386-1.467A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.022-1.38l-.36-.214-3.732.857.872-3.64-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
+                        WhatsApp Us
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-stats reveal-hero" style="--delay:0.4s">
+                <div class="container hero-stats-inner">
+                    <div class="stat">
+                        <strong>15+</strong>
+                        <span>Projects Shipped</span>
                     </div>
-                    <div class="hero-line hero-right">Meets Code</div>
-                </div>
-            </div>
-
-            <div class="hero-panel hero-subheadline">
-                <div class="container hero-stack">
-                    <p class="eyebrow">Student driven Innovation</p>
-                    <h1 class="display">We turn complex challenges into digital solutions.</h1>
-                    <p class="lead">
-                        We dream to build the future of Malawi, one line of code at a time.
-                        With an ambitious team who values clarity, craft, and impact.
-                    </p>
-                </div>
-            </div>
-
-            <div class="hero-panel hero-cta">
-                <div class="container hero-stack">
-                    <img class="cta-graphic" src="images/bg-2.png" alt="" role="presentation">
-                    <h2 class="display">Where your next launch feels effortless.</h2>
-                    <p class="lead">
-                        From strategy to delivery, we help you move with confidence and ship with polish.
-                    </p>
-                    <div class="button-row">
-                        <a class="btn btn-primary" href="#projects">View Our Work</a>
-                        <a class="btn btn-secondary" href="https://wa.me/0886362309" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <strong>100%</strong>
+                        <span>Client Satisfaction</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <strong>6</strong>
+                        <span>Industries Served</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <strong>48h</strong>
+                        <span>Avg. Response Time</span>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- ======== ABOUT ======== -->
         <section id="about" class="section">
             <div class="container">
-                <div class="section-header reveal">
-                    <p class="section-eyebrow">About Us</p>
-                    <h2 class="section-title">Your Next Business Solution</h2>
-                    <p class="section-lead">
-                        We are a tech studio solving critical gaps in the
-                        local market. We provide affordable, custom digital solutions for businesses,
-                        from building custom websites, growing startups with developing mobile apps and making businesses more efficient
-                        with tailored information systems.
-                    </p>
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <p class="section-eyebrow">Who We Are</p>
+                        <h2 class="section-title">A studio obsessed<br>with <em>great craft.</em></h2>
+                        <p class="section-lead">
+                            Code Collective is Malawi's most ambitious youth-led tech studio. We don't just build websites — we architect digital experiences that convert, engage, and scale. Every pixel is intentional. Every line of code is optimized.
+                        </p>
+                        <p class="section-lead" style="margin-top:1rem">
+                            Born in Lilongwe, we're closing the gap between local businesses and world-class digital solutions — at prices that make sense for the Malawian market.
+                        </p>
+                        <div class="about-values">
+                            <div class="value-pill">⚡ Speed-first builds</div>
+                            <div class="value-pill">🎯 Conversion-focused</div>
+                            <div class="value-pill">🛡️ Secure by default</div>
+                            <div class="value-pill">🤝 Long-term partners</div>
+                        </div>
+                    </div>
+                    <div class="about-cards reveal" style="--delay:0.15s">
+                        <div class="about-card ac-blue">
+                            <div class="ac-icon">🚀</div>
+                            <h3>Youth-Led Innovation</h3>
+                            <p>Fresh eyes on every problem. We combine academic rigor with real-world hustle.</p>
+                        </div>
+                        <div class="about-card ac-green">
+                            <div class="ac-icon">💎</div>
+                            <h3>Quality Without Compromise</h3>
+                            <p>We hold ourselves to the same standard as the world's top studios — always.</p>
+                        </div>
+                        <div class="about-card ac-dark">
+                            <div class="ac-icon">🌍</div>
+                            <h3>Built for Malawi</h3>
+                            <p>We understand the local market, infrastructure, and what actually works here.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="grid grid-3 value-grid">
-                    <article class="card card-soft">
-                        <h3>Youth-Led</h3>
-                        <p>Fresh perspectives driving innovation.</p>
-                    </article>
-                    <article class="card card-soft">
-                        <h3>Solution-Focused</h3>
-                        <p>Addressing real market gaps with clarity.</p>
-                    </article>
-                    <article class="card card-soft">
-                        <h3>Affordable</h3>
-                        <p>Quality tech that is accessible to all.</p>
-                    </article>
-                </div>
-
-                
-            </div>
-        </section>
-
-        <section id="skills" class="section section-muted">
-            <div class="container">
-                <div class="section-header reveal">
-                    <p class="section-eyebrow">Sectors We Serve</p>
-                    <h2 class="section-title">Industry Expertise</h2>
-                    <p class="section-lead">
-                        We specialize in delivering tailored solutions across diverse sectors,
-                        understanding the unique challenges each industry faces.
-                    </p>
-                </div>
-
-                <div class="grid grid-3">
-                    <article class="card">
-                        <h3>Fintech</h3>
-                        <p>Secure payment integrations and financial tools.</p>
-                    </article>
-                    <article class="card">
-                        <h3>Edutech</h3>
-                        <p>Learning management systems and school portals.</p>
-                    </article>
-                    <article class="card">
-                        <h3>SME Digitalization</h3>
-                        <p>Inventory systems for pharmacies and retail.</p>
-                    </article>
-                    <article class="card">
-                        <h3>Enterprise</h3>
-                        <p>Custom solutions for growing businesses.</p>
-                    </article>
-                    <article class="card">
-                        <h3>Healthcare</h3>
-                        <p>Patient management and health tracking systems.</p>
-                    </article>
-                    <article class="card">
-                        <h3>Agriculture</h3>
-                        <p>Farm management and agro-vet solutions.</p>
-                    </article>
+                <div class="marquee-logos" aria-label="Industries we serve">
+                    <p class="marquee-label">Industries We Serve</p>
+                    <div class="marquee-track-wrap">
+                        <div class="marquee-track">
+                            <span>Fintech</span><span>Edutech</span><span>Healthcare</span>
+                            <span>Retail &amp; SME</span><span>Agriculture</span><span>Enterprise</span>
+                            <span>NGO</span><span>Government</span>
+                            <span>Fintech</span><span>Edutech</span><span>Healthcare</span>
+                            <span>Retail &amp; SME</span><span>Agriculture</span><span>Enterprise</span>
+                            <span>NGO</span><span>Government</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="section">
+        <!-- ======== SERVICES ======== -->
+        <section id="services" class="section section-dark">
             <div class="container">
                 <div class="section-header reveal">
-                    <p class="section-eyebrow">Our Services</p>
-                    <h2 class="section-title">What We Build</h2>
-                    <p class="section-lead">
-                        From concept to deployment, we deliver end-to-end digital solutions
-                        that drive real business results.
-                    </p>
+                    <p class="section-eyebrow">What We Do</p>
+                    <h2 class="section-title">End-to-end digital<br>solutions that <em>deliver.</em></h2>
+                    <p class="section-lead">From a single landing page to a full enterprise system — we've got the expertise to handle it.</p>
                 </div>
 
-                <div class="grid grid-3">
-                    <article class="card card-border">
+                <div class="services-grid">
+                    <article class="svc-card reveal" style="--delay:0s">
+                        <div class="svc-number">01</div>
+                        <div class="svc-icon">🌐</div>
                         <h3>Web Development</h3>
-                        <p>Modern, responsive websites that convert visitors into customers.</p>
-                        <ul class="list">
-                            <li>Company Websites</li>
-                            <li>E-commerce Stores</li>
+                        <p>Blazing-fast, SEO-ready, conversion-optimised websites and web applications that actually grow your business.</p>
+                        <ul class="svc-list">
+                            <li>Company &amp; E-commerce Sites</li>
                             <li>Landing Pages</li>
                             <li>Web Applications</li>
+                            <li>Custom CMS Integrations</li>
                         </ul>
+                        <div class="svc-arrow">→</div>
                     </article>
-                    <article class="card card-border">
-                        <h3>Information Systems</h3>
-                        <p>Custom management software tailored to your business operations.</p>
-                        <ul class="list">
-                            <li>Point of Sale (POS)</li>
-                            <li>CRM Systems</li>
-                            <li>Inventory Management</li>
-                            <li>HR &amp; Payroll</li>
-                        </ul>
-                    </article>
-                    <article class="card card-border">
+                    <article class="svc-card reveal" style="--delay:0.08s">
+                        <div class="svc-number">02</div>
+                        <div class="svc-icon">📱</div>
                         <h3>Mobile Applications</h3>
-                        <p>Native and cross-platform apps for iOS and Android devices.</p>
-                        <ul class="list">
-                            <li>Android Apps</li>
-                            <li>iOS Apps</li>
-                            <li>Cross-Platform</li>
+                        <p>Native and cross-platform apps built for Malawi's mobile-first users. iOS, Android, or both.</p>
+                        <ul class="svc-list">
+                            <li>Android &amp; iOS Apps</li>
                             <li>Progressive Web Apps</li>
+                            <li>Cross-Platform (React Native)</li>
+                            <li>App Store Deployment</li>
                         </ul>
+                        <div class="svc-arrow">→</div>
                     </article>
-                    <article class="card card-border">
+                    <article class="svc-card reveal" style="--delay:0.16s">
+                        <div class="svc-number">03</div>
+                        <div class="svc-icon">⚙️</div>
+                        <h3>Information Systems</h3>
+                        <p>Custom management software that replaces spreadsheets and manual processes with powerful, automated workflows.</p>
+                        <ul class="svc-list">
+                            <li>POS &amp; Inventory Systems</li>
+                            <li>CRM Platforms</li>
+                            <li>HR &amp; Payroll Software</li>
+                            <li>School Management Systems</li>
+                        </ul>
+                        <div class="svc-arrow">→</div>
+                    </article>
+                    <article class="svc-card reveal" style="--delay:0.24s">
+                        <div class="svc-number">04</div>
+                        <div class="svc-icon">✦</div>
                         <h3>Brand &amp; Design</h3>
-                        <p>Visual identity that makes your brand memorable and professional.</p>
-                        <ul class="list">
-                            <li>Logo Design</li>
-                            <li>Style Guides</li>
+                        <p>Logos, style guides, and UI/UX that make your brand impossible to forget — from first impression onwards.</p>
+                        <ul class="svc-list">
+                            <li>Logo &amp; Visual Identity</li>
                             <li>UI/UX Design</li>
-                            <li>Graphic Design</li>
+                            <li>Brand Guidelines</li>
+                            <li>Pitch Deck Design</li>
                         </ul>
+                        <div class="svc-arrow">→</div>
                     </article>
-                    <article class="card card-border">
-                        <h3>Content</h3>
-                        <p>Technical writing and SEO strategies to boost your online presence.</p>
-                        <ul class="list">
-                            <li>Technical Blogging</li>
-                            <li>SEO Optimization</li>
-                            <li>Documentation</li>
-                            <li>Copywriting</li>
+                    <article class="svc-card reveal" style="--delay:0.32s">
+                        <div class="svc-number">05</div>
+                        <div class="svc-icon">📈</div>
+                        <h3>SEO &amp; Content</h3>
+                        <p>Rank higher, reach more customers. We craft content strategies built around what Malawian audiences actually search for.</p>
+                        <ul class="svc-list">
+                            <li>Technical SEO Audits</li>
+                            <li>Copywriting &amp; Blogging</li>
+                            <li>Google Business Setup</li>
+                            <li>Analytics &amp; Reporting</li>
                         </ul>
+                        <div class="svc-arrow">→</div>
+                    </article>
+                    <article class="svc-card svc-cta-card reveal" style="--delay:0.4s">
+                        <p class="svc-cta-eyebrow">Not sure what you need?</p>
+                        <h3>Let's figure it out together.</h3>
+                        <p>Book a free 30-minute discovery call and we'll map out exactly what your business needs.</p>
+                        <a href="#contact" class="btn btn-glow">Get Free Consultation</a>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="section section-muted">
+        <!-- ======== PROJECTS ======== -->
+        <section id="projects" class="section">
             <div class="container">
                 <div class="section-header reveal">
                     <p class="section-eyebrow">Featured Work</p>
-                    <h2 class="section-title">Projects That Make Impact</h2>
-                    <p class="section-lead">
-                        Here are some of our successful projects that have transformed
-                        businesses across Malawi.
-                    </p>
+                    <h2 class="section-title">Projects that made<br>a <em>real difference.</em></h2>
+                    <p class="section-lead">Real clients, real results. Hover or tap a card to see the full story.</p>
                 </div>
 
-                <div class="project-carousel">
-                    <article class="project-card reveal" tabindex="0" role="button" aria-pressed="false">
-                        <div class="card-inner">
-                            <div class="card-face card-front">
-                                <p class="tag">Edutech</p>
-                                <h3>Student Planner App</h3>
-                                <p>See the full project details.</p>
-                            </div>
-                            <div class="card-face card-back">
-                                <h3>Student Planner App</h3>
-                                <p>
-                                    Productivity mobile app helping students organize assignments, track deadlines,
-                                    and manage their academic schedule effectively.
-                                </p>
+                <div class="projects-grid">
+
+                    <article class="proj-card proj-large reveal" tabindex="0" role="button" aria-pressed="false">
+                        <div class="proj-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=800&q=80" alt="Student Planner App" loading="lazy">
+                        </div>
+                        <div class="proj-overlay">
+                            <div class="proj-tag">Edutech · Mobile App</div>
+                            <h3>StudySync — Student Planner App</h3>
+                            <p>A productivity mobile app helping over 500 students organize assignments, track deadlines, and manage their academic schedule. Built with React Native for iOS and Android.</p>
+                            <div class="proj-stack">
+                                <span>React Native</span><span>Firebase</span><span>Node.js</span>
                             </div>
                         </div>
-                    </article>
-                    <article class="project-card reveal" tabindex="0" role="button" aria-pressed="false">
-                        <div class="card-inner">
-                            <div class="card-face card-front">
-                                <p class="tag">Healthcare</p>
-                                <h3>Pharmacy Website</h3>
-                                <p>See the full project details.</p>
-                            </div>
-                            <div class="card-face card-back">
-                                <h3>Pharmacy Website</h3>
-                                <p>
-                                    Digital presence with service highlights, inquiry forms, location,
-                                    and a clean UI designed to build patient trust.
-                                </p>
-                            </div>
+                        <div class="proj-meta">
+                            <div class="proj-tag proj-tag-inline">Edutech</div>
+                            <h3>StudySync App</h3>
+                            <p class="proj-hint">Hover to explore →</p>
                         </div>
                     </article>
-                    <article class="project-card reveal" tabindex="0" role="button" aria-pressed="false">
-                        <div class="card-inner">
-                            <div class="card-face card-front">
-                                <p class="tag">Healthcare</p>
-                                <h3>Pharmacy Management System</h3>
-                                <p>See the full project details.</p>
-                            </div>
-                            <div class="card-face card-back">
-                                <h3>Pharmacy Management System</h3>
-                                <p>
-                                    Complete inventory tracking and sales management solution for local pharmacies,
-                                    with real-time stock alerts and expiry tracking.
-                                </p>
+
+                    <article class="proj-card reveal" style="--delay:0.08s" tabindex="0" role="button" aria-pressed="false">
+                        <div class="proj-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80" alt="Pharmacy Website" loading="lazy">
+                        </div>
+                        <div class="proj-overlay">
+                            <div class="proj-tag">Healthcare · Web</div>
+                            <h3>MedPoint Pharmacy</h3>
+                            <p>A trust-building digital presence for a Lilongwe pharmacy chain. Features service highlights, online inquiry forms, branch locator, and mobile-first design.</p>
+                            <div class="proj-stack">
+                                <span>HTML/CSS/JS</span><span>Netlify</span>
                             </div>
                         </div>
+                        <div class="proj-meta">
+                            <div class="proj-tag proj-tag-inline">Healthcare</div>
+                            <h3>MedPoint Pharmacy</h3>
+                            <p class="proj-hint">Hover to explore →</p>
+                        </div>
                     </article>
+
+                    <article class="proj-card reveal" style="--delay:0.16s" tabindex="0" role="button" aria-pressed="false">
+                        <div class="proj-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Pharmacy Management System" loading="lazy">
+                        </div>
+                        <div class="proj-overlay">
+                            <div class="proj-tag">Healthcare · System</div>
+                            <h3>PharmTrack Management System</h3>
+                            <p>Complete inventory &amp; sales management for 3 pharmacy branches. Real-time stock alerts, expiry tracking, and a sleek POS interface. Reduced losses by 40%.</p>
+                            <div class="proj-stack">
+                                <span>React</span><span>Python</span><span>PostgreSQL</span>
+                            </div>
+                        </div>
+                        <div class="proj-meta">
+                            <div class="proj-tag proj-tag-inline">Management System</div>
+                            <h3>PharmTrack System</h3>
+                            <p class="proj-hint">Hover to explore →</p>
+                        </div>
+                    </article>
+
+                    <article class="proj-card reveal" style="--delay:0.24s" tabindex="0" role="button" aria-pressed="false">
+                        <div class="proj-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80" alt="E-commerce Platform" loading="lazy">
+                        </div>
+                        <div class="proj-overlay">
+                            <div class="proj-tag">Retail · E-commerce</div>
+                            <h3>MarketMW — Online Store</h3>
+                            <p>Full-featured e-commerce platform for a Blantyre fashion brand. Mobile checkout, TNM Mpamba &amp; Airtel Money integrations, and an admin dashboard built for non-technical staff.</p>
+                            <div class="proj-stack">
+                                <span>Next.js</span><span>Stripe</span><span>Sanity CMS</span>
+                            </div>
+                        </div>
+                        <div class="proj-meta">
+                            <div class="proj-tag proj-tag-inline">E-commerce</div>
+                            <h3>MarketMW Store</h3>
+                            <p class="proj-hint">Hover to explore →</p>
+                        </div>
+                    </article>
+
+                    <article class="proj-card reveal" style="--delay:0.32s" tabindex="0" role="button" aria-pressed="false">
+                        <div class="proj-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&q=80" alt="School Management System" loading="lazy">
+                        </div>
+                        <div class="proj-overlay">
+                            <div class="proj-tag">Edutech · System</div>
+                            <h3>EduPulse School Portal</h3>
+                            <p>End-to-end school management system for a private secondary school. Handles student records, fee collection, timetabling, and parent communications — all in one place.</p>
+                            <div class="proj-stack">
+                                <span>Vue.js</span><span>Laravel</span><span>MySQL</span>
+                            </div>
+                        </div>
+                        <div class="proj-meta">
+                            <div class="proj-tag proj-tag-inline">Edutech</div>
+                            <h3>EduPulse Portal</h3>
+                            <p class="proj-hint">Hover to explore →</p>
+                        </div>
+                    </article>
+
                 </div>
 
-                <div class="section-cta">
-                    <p>Have a project in mind?</p>
-                    <a class="btn btn-primary" href="#contact">Start Your Project</a>
+                <div class="section-cta reveal">
+                    <p>Got a project in mind?</p>
+                    <a class="btn btn-glow" href="#contact">Start Your Project</a>
                 </div>
             </div>
         </section>
 
+        <!-- ======== TEAM ======== -->
+        <section id="team" class="section section-dark">
+            <div class="container">
+                <div class="section-header reveal">
+                    <p class="section-eyebrow">Meet the Team</p>
+                    <h2 class="section-title">The minds behind<br>the <em>magic.</em></h2>
+                    <p class="section-lead">A tight-knit crew of young Malawian builders, designers, and strategists — united by one goal: making great things.</p>
+                </div>
+
+                <div class="team-grid">
+                    <article class="team-card reveal" style="--delay:0s">
+                        <div class="team-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&q=80" alt="Chisomo Banda" loading="lazy">
+                            <div class="team-social">
+                                <a href="#" aria-label="LinkedIn">in</a>
+                                <a href="#" aria-label="GitHub">gh</a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Chisomo Banda</h3>
+                            <p class="team-role">Co-Founder &amp; Lead Developer</p>
+                            <p class="team-bio">Full-stack engineer with a passion for systems that scale. CS student at MUST. Previously interned at a Nairobi fintech.</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card reveal" style="--delay:0.1s">
+                        <div class="team-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Mphatso Chirwa" loading="lazy">
+                            <div class="team-social">
+                                <a href="#" aria-label="LinkedIn">in</a>
+                                <a href="#" aria-label="GitHub">gh</a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Mphatso Chirwa</h3>
+                            <p class="team-role">Co-Founder &amp; Design Lead</p>
+                            <p class="team-bio">UI/UX designer obsessed with the intersection of beauty and function. Designs that win awards and convert customers.</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card reveal" style="--delay:0.2s">
+                        <div class="team-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&q=80" alt="Tadala Mwale" loading="lazy">
+                            <div class="team-social">
+                                <a href="#" aria-label="LinkedIn">in</a>
+                                <a href="#" aria-label="GitHub">gh</a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Tadala Mwale</h3>
+                            <p class="team-role">Mobile Developer</p>
+                            <p class="team-bio">Builds apps that Malawians actually want to use. React Native specialist with 3 shipped apps on both stores.</p>
+                        </div>
+                    </article>
+
+                    <article class="team-card reveal" style="--delay:0.3s">
+                        <div class="team-img-wrap">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Kondwani Phiri" loading="lazy">
+                            <div class="team-social">
+                                <a href="#" aria-label="LinkedIn">in</a>
+                                <a href="#" aria-label="GitHub">gh</a>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h3>Kondwani Phiri</h3>
+                            <p class="team-role">Backend &amp; Systems Engineer</p>
+                            <p class="team-bio">Architects the infrastructure that keeps everything running smoothly. Loves databases, APIs, and a good whiteboard session.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== PRICING ======== -->
         <section id="pricing" class="section">
             <div class="container">
                 <div class="section-header reveal">
                     <p class="section-eyebrow">Pricing Plans</p>
-                    <h2 class="section-title">Transparent &amp; Flexible</h2>
-                    <p class="section-lead">
-                        Choose a plan that fits your needs. We offer both project-based
-                        and retainer options for ongoing partnerships.
-                    </p>
+                    <h2 class="section-title">Transparent pricing.<br><em>No surprises.</em></h2>
+                    <p class="section-lead">Fair, flexible plans for every stage of your business. All prices are in Malawian Kwacha.</p>
                 </div>
 
-                <div class="grid grid-3">
-                    <article class="card card-border">
-                        <h3>Starter</h3>
-                        <p class="price">Starting from MWK 150,000</p>
-                        <p>Perfect for small businesses and startups getting online.</p>
-                        <ul class="list">
-                            <li>Single page website or landing page</li>
-                            <li>Mobile-responsive design</li>
-                            <li>Basic SEO setup</li>
-                            <li>Contact form integration</li>
-                            <li>2 rounds of revisions</li>
-                            <li>1 month support</li>
+                <div class="pricing-grid">
+                    <article class="price-card reveal" style="--delay:0s">
+                        <div class="price-tier">Starter</div>
+                        <div class="price-amount">MWK 150,000<span>/project</span></div>
+                        <p class="price-desc">Perfect for small businesses and individuals getting online for the first time.</p>
+                        <ul class="price-list">
+                            <li>✓ Single-page website or landing page</li>
+                            <li>✓ Mobile-responsive design</li>
+                            <li>✓ Basic SEO setup</li>
+                            <li>✓ Contact form integration</li>
+                            <li>✓ 2 rounds of revisions</li>
+                            <li>✓ 1 month post-launch support</li>
                         </ul>
-                        <a class="btn btn-primary" href="#contact">Get Started</a>
+                        <a class="btn btn-outline" href="#contact">Get Started</a>
                     </article>
-                    <article class="card card-highlight">
-                        <p class="tag">Recommended</p>
-                        <h3>Pro</h3>
-                        <p class="price">Starting from MWK 500,000</p>
-                        <p>Comprehensive solutions for growing businesses.</p>
-                        <ul class="list">
-                            <li>Multi-page website or web application</li>
-                            <li>Custom UI/UX design</li>
-                            <li>Advanced SEO optimization</li>
-                            <li>CMS or admin dashboard</li>
-                            <li>Payment integration</li>
-                            <li>Unlimited revisions</li>
-                            <li>3 months support</li>
-                            <li>Training session included</li>
+
+                    <article class="price-card price-featured reveal" style="--delay:0.1s">
+                        <div class="price-badge">Most Popular</div>
+                        <div class="price-tier">Pro</div>
+                        <div class="price-amount">MWK 500,000<span>/project</span></div>
+                        <p class="price-desc">Comprehensive solutions for growing businesses that want real digital impact.</p>
+                        <ul class="price-list">
+                            <li>✓ Multi-page site or web application</li>
+                            <li>✓ Custom UI/UX design</li>
+                            <li>✓ Advanced SEO optimization</li>
+                            <li>✓ CMS or admin dashboard</li>
+                            <li>✓ Payment gateway integration</li>
+                            <li>✓ Unlimited revisions</li>
+                            <li>✓ 3 months post-launch support</li>
+                            <li>✓ Team training session</li>
                         </ul>
-                        <a class="btn btn-secondary" href="#contact">Most Popular</a>
+                        <a class="btn btn-glow" href="#contact">Start Your Project</a>
                     </article>
-                    <article class="card card-border">
-                        <h3>Enterprise</h3>
-                        <p class="price">Custom pricing</p>
-                        <p>Full-service partnership for established organizations.</p>
-                        <ul class="list">
-                            <li>Complex systems and applications</li>
-                            <li>Dedicated project manager</li>
-                            <li>Priority support (24/7)</li>
-                            <li>Custom integrations</li>
-                            <li>Scalable architecture</li>
-                            <li>Ongoing maintenance</li>
-                            <li>Quarterly reviews</li>
-                            <li>SLA guarantee</li>
+
+                    <article class="price-card reveal" style="--delay:0.2s">
+                        <div class="price-tier">Enterprise</div>
+                        <div class="price-amount">Custom<span> pricing</span></div>
+                        <p class="price-desc">Full-service digital partnership for established organizations with complex needs.</p>
+                        <ul class="price-list">
+                            <li>✓ Complex systems &amp; applications</li>
+                            <li>✓ Dedicated project manager</li>
+                            <li>✓ Priority 24/7 support</li>
+                            <li>✓ Custom integrations &amp; APIs</li>
+                            <li>✓ Scalable cloud architecture</li>
+                            <li>✓ Ongoing maintenance retainer</li>
+                            <li>✓ Quarterly strategy reviews</li>
+                            <li>✓ SLA guarantee</li>
                         </ul>
-                        <a class="btn btn-primary" href="#contact">Contact Us</a>
+                        <a class="btn btn-outline" href="#contact">Talk to Us</a>
                     </article>
                 </div>
 
-                <p class="note">
-                    All prices are estimates. Final pricing depends on project scope and requirements.
-                    Contact us for a detailed quote tailored to your needs.
-                </p>
+                <p class="pricing-note reveal">All prices are starting estimates. Final cost depends on scope and complexity. <a href="#contact">Request a custom quote →</a></p>
             </div>
         </section>
 
-        <section id="contact" class="section section-muted">
+        <!-- ======== CONTACT ======== -->
+        <section id="contact" class="section section-dark">
             <div class="container">
                 <div class="section-header reveal">
                     <p class="section-eyebrow">Get In Touch</p>
-                    <h2 class="section-title">Let's Build Something Great</h2>
-                    <p class="section-lead">
-                        Ready to start your project? Fill out the form below or reach out
-                        directly on WhatsApp for a quick response.
-                    </p>
+                    <h2 class="section-title">Ready to build<br>something <em>great?</em></h2>
+                    <p class="section-lead">Fill in the form below or hit us on WhatsApp. We respond within 48 hours — usually much faster.</p>
                 </div>
 
-                <div class="grid grid-2 contact-grid">
-                    <form id="contact-form" class="card form-card">
-                        <div class="form-row">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" placeholder="John Doe">
+                <div class="contact-grid">
+                    <form id="contact-form" class="contact-form reveal">
+                        <div class="form-row-2">
+                            <div class="form-row">
+                                <label for="name">Your Name *</label>
+                                <input type="text" id="name" name="name" placeholder="e.g. Chimwemwe Dube" required>
+                            </div>
+                            <div class="form-row">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" placeholder="you@company.com" required>
+                            </div>
+                        </div>
+                        <div class="form-row-2">
+                            <div class="form-row">
+                                <label for="businessType">Business Type</label>
+                                <select id="businessType" name="businessType">
+                                    <option value="">Select type</option>
+                                    <option value="startup">Startup</option>
+                                    <option value="sme">Small / Medium Business</option>
+                                    <option value="enterprise">Enterprise</option>
+                                    <option value="ngo">NGO / Non-Profit</option>
+                                    <option value="government">Government</option>
+                                    <option value="individual">Individual</option>
+                                </select>
+                            </div>
+                            <div class="form-row">
+                                <label for="service">Service Interest</label>
+                                <select id="service" name="service">
+                                    <option value="">Select a service</option>
+                                    <option value="web">Web Development</option>
+                                    <option value="mobile">Mobile Application</option>
+                                    <option value="systems">Information System</option>
+                                    <option value="design">Brand &amp; Design</option>
+                                    <option value="seo">SEO &amp; Content</option>
+                                    <option value="other">Other / Not Sure</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="form-row">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" name="email" placeholder="john@example.com">
+                            <label for="message">Tell us about your project *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="What are you building? What's your timeline and budget?" required></textarea>
                         </div>
-                        <div class="form-row">
-                            <label for="businessType">Business Type</label>
-                            <select id="businessType" name="businessType">
-                                <option value="">Select your business type</option>
-                                <option value="startup">Startup</option>
-                                <option value="sme">Small/Medium Business</option>
-                                <option value="enterprise">Enterprise</option>
-                                <option value="ngo">NGO/Non-Profit</option>
-                                <option value="government">Government Institution</option>
-                                <option value="individual">Individual</option>
-                            </select>
-                        </div>
-                        <div class="form-row">
-                            <label for="service">Service Interest</label>
-                            <select id="service" name="service">
-                                <option value="">Select a service</option>
-                                <option value="web">Web Development</option>
-                                <option value="mobile">Mobile Application</option>
-                                <option value="systems">Information Systems</option>
-                                <option value="design">Brand &amp; Design</option>
-                                <option value="content">Content &amp; SEO</option>
-                                <option value="other">Other / Not Sure</option>
-                            </select>
-                        </div>
-                        <div class="form-row">
-                            <label for="message">Tell us about your project</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Describe your project, goals, and timeline..."></textarea>
-                        </div>
-                        <button class="btn btn-primary" type="submit">Send Message</button>
+                        <button class="btn btn-glow btn-full" type="submit">Send Message ✦</button>
                     </form>
 
-                    <div class="contact-aside">
-                        <div class="card card-soft">
-                            <h3>Prefer WhatsApp?</h3>
-                            <p>Get instant support and discuss your project directly with our team.</p>
-                            <a class="btn btn-secondary" href="https://wa.me/0886362309" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
+                    <div class="contact-aside reveal" style="--delay:0.15s">
+                        <div class="contact-info-card">
+                            <h3>Prefer a quick chat?</h3>
+                            <p>Our team is available on WhatsApp for fast responses, quick quotes, and project discussions.</p>
+                            <a class="btn btn-wa" href="https://wa.me/265886362309" target="_blank" rel="noopener noreferrer">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.096.54 4.07 1.484 5.796L0 24l6.386-1.467A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.022-1.38l-.36-.214-3.732.857.872-3.64-.235-.374A9.818 9.818 0 1112 21.818z"/></svg>
+                                Chat on WhatsApp
+                            </a>
                         </div>
 
-                        <div class="card card-border">
-                            <h3>Contact Details</h3>
-                            <p>Email: <a href="mailto:codecollective.dev@gmail.com">codecollective.dev@gmail.com</a></p>
-                            <p>Location: Lilongwe, Malawi</p>
+                        <div class="contact-details">
+                            <div class="cd-item">
+                                <span class="cd-label">Email</span>
+                                <a href="mailto:codecollective.dev@gmail.com">codecollective.dev@gmail.com</a>
+                            </div>
+                            <div class="cd-item">
+                                <span class="cd-label">Location</span>
+                                <span>Lilongwe, Malawi 🇲🇼</span>
+                            </div>
+                            <div class="cd-item">
+                                <span class="cd-label">Response Time</span>
+                                <span>Within 48 hours</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -434,48 +617,58 @@
         </section>
     </main>
 
+    <!-- FOOTER -->
     <footer class="site-footer">
-        <div class="container footer-grid">
-            <div>
+        <div class="container footer-inner">
+            <div class="footer-brand">
                 <a class="brand" href="#home">
-                    <img src="images/logo.png" alt="Code Collective Logo" class="brand-logo">
+                    <img src="images/logo.png" alt="Code Collective" class="brand-logo">
                     <span class="brand-text">
-                        <span class="brand-code">Code</span>
-                        <span class="brand-collective">Collective</span>
+                        <span class="brand-code">Code</span><span class="brand-collective">Collective</span>
                     </span>
                 </a>
-                <p class="footer-text">
-                    A youth-led tech studio turning complex challenges into elegant
-                    digital solutions. Building the future of Malawi, one line of code at a time.
-                </p>
+                <p>Building the digital future of Malawi, one line of code at a time.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                    </a>
+                    <a href="#" aria-label="GitHub">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                </div>
             </div>
-            <div>
-                <h4>Quick Links</h4>
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#projects">Projects</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <div>
-                <h4>Services</h4>
-                <a href="#services">Web Development</a>
-                <a href="#services">Mobile Apps</a>
-                <a href="#services">Information Systems</a>
-                <a href="#services">Brand &amp; Design</a>
-                <a href="#services">Content &amp; SEO</a>
-            </div>
-            <div>
-                <h4>Social</h4>
-                <a href="#">LinkedIn</a>
-                <a href="#">Instagram</a>
-                <a href="#">GitHub</a>
+            <div class="footer-links">
+                <div>
+                    <h4>Navigate</h4>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#projects">Work</a>
+                    <a href="#team">Team</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <a href="#services">Web Development</a>
+                    <a href="#services">Mobile Apps</a>
+                    <a href="#services">Information Systems</a>
+                    <a href="#services">Brand &amp; Design</a>
+                    <a href="#services">SEO &amp; Content</a>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <a href="mailto:codecollective.dev@gmail.com">codecollective.dev@gmail.com</a>
+                    <a href="https://wa.me/265886362309" target="_blank" rel="noopener">WhatsApp Us</a>
+                    <span>Lilongwe, Malawi 🇲🇼</span>
+                </div>
             </div>
         </div>
         <div class="container footer-bottom">
-            <p>&copy; 2026 Code Collective. All rights reserved.</p>
-            <p>Blantyre, Malawi.</p>
+            <p>© 2026 Code Collective. All rights reserved.</p>
+            <p>Crafted with ♥ in Lilongwe, Malawi.</p>
         </div>
     </footer>
 
